@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Vue js -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <section>
+        <h2>Lista di nomi di studenti</h2>
+        <ul>
+          <li v-for="(studentName, index) in students">
+            n.{{index + 1}} {{ studentName }}
+          </li>
+        </ul>
+      </section>
+
+      <p>{{ students[1] }}</p>
+
+      <section>
+        <h2>{{ product.name }}</h2>
+
+        <div>
+          <p v-for="(value, key) in product">{{key}}: {{ value }}</p>
+        </div>
+      </section>
+
+      <section>
+        <span v-for="num in 20">{{ getRnd() }}</span>
+      </section>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <!-- Vue js -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container mt-5">
+        <!-- Messaggio di no student -->
+        <div v-if="studentsArray.length === 0">
+          <h3>Non ci sono studenti</h3>
+        </div>
+        <!-- Stampa di studenti -->
+        <div v-else class="row row-cols-2 row-cols-md-3 row-cols-lg-4">
+          <!-- Single Student -->
+          <div class="col" v-for="(curStudent, index) in studentsArray" @click="showStudent(index)">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">{{ curStudent.name }} {{ curStudent.lastname }}</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">Età: {{ curStudent.age }}</h6>
+              </div>
+            </div>
+          </div>
+          <!-- Single Student -->
+        </div>
+
+        <hr>
+        <section>
+          <h3>Dati di singolo studente</h3>
+          <div>
+            <h4>{{studentsArray[curIndex].name}} {{ studentsArray[curIndex].lastname}}</h4>
+            <p>Età: {{ studentsArray[curIndex].age }}</p>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>

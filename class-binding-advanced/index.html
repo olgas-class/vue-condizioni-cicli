@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- Vue js -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <!-- Nel binding possiamo inserire:
+      - una variabile che contiene una stringa
+      - utilizzare un'array -->
+      <!-- <h1 class="title" :class="[roundClass, colorClass]">{{greeting}}</h1> -->
+
+      <!-- Utilizziamo una variabile flag con array binding -->
+      <!-- <h1 class="title" :class="[isRound ? 'round' : '', isGreen ? 'green' : '']">
+        {{greeting}}
+      </h1> -->
+
+      <!-- Utilizziamo la variabile flag con object binding -->
+      <!-- In questo oggetto la chiave è il nome di classe da aggiungere dinamicamente, il valore è la variabile booleana -->
+      <h1 class="title" :class="{'round': isRound, 'green': isGreen}">{{ greeting }}</h1>
+      <div>
+        <button @click="toggleRound">Toggle round</button>
+        <button @click="toggleGreen">Toggle green</button>
+      </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
